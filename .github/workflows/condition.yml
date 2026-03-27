@@ -1,0 +1,10 @@
+name: condition execution
+
+on: workflow_dispatch
+
+jobs:
+    runs-on: ubuntu-latest
+    if github.ref == 'refs/heads/main'
+    steps:
+        - name: Run condition
+          run: echo "This is a condition execution"
