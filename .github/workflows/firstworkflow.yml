@@ -35,7 +35,7 @@ jobs:
 
     test:
         name: Job 2
-        runs_on: ubuntu-latest
+        runs-on: ubuntu-latest
         needs: build
         steps:
             - name: mock test
