@@ -1,0 +1,30 @@
+name: My Second workflow
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    build:
+        name: Build-job
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: List Installed tools
+              run: |
+                echo "#######JAVA#####"
+                java -version 2>&1 || echo 'Not Installed'
+                echo "#######NODE#####"
+                node --version || echo 'Not Installed'
+                echo "#####PYTHON#####"
+                python3 --version || echo 'Not Installed'
+                echo "#####DOCKER#####"
+                docker --version || echo 'Not Installed'
+
+
+
+
+
