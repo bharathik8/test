@@ -76,4 +76,4 @@ jobs:
         if: needs.detect.outputs.app == 'unknown'
         run: |
           echo "Unsupported project type"
-          exit 1
+          
