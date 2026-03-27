@@ -7,7 +7,7 @@ env:
 
 jobs:
     build:
-        runs-on: ${{env.APP_TYPE == 'java' && 'ubuntu-latest' || 'windows-latest' }}
+        runs-on: {{$APP_TYPE == 'java' && 'ubuntu-latest' || 'windows-latest' }}
 
         steps:
             - name: runner detail
