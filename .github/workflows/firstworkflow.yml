@@ -43,6 +43,16 @@ jobs:
                 echo "Running Unit test"
                 echo "test"
 
+    notify:
+        name: Job 3
+        runs-on: ubuntu-latest
+        needs: build 
+        if: always()
+        steps:
+            - name: Send notification
+              run: echo "Build Completed for $GITHUB_SHA"
+
+
 
 
 
