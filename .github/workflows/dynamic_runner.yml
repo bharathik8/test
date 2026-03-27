@@ -1,0 +1,15 @@
+name: Dynamic runner
+
+on: workflow_dispatch
+
+env:
+   APP_TYPE: "java" 
+
+jobs:
+    build:
+        runs-on: ${{env.APP_TYPE == 'java' && 'ubuntu-latest' || 'windows-latest' }}
+
+        steps:
+            - name: runner detail
+              run: echo "Running on $RUNNER_OS"
+
