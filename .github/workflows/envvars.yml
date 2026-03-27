@@ -12,6 +12,8 @@ jobs:
         env:
             JOB_ENV: "job-value"
 
+        environment: prod
+
         steps:
             - name: print global and job level variable
               run: |
@@ -25,3 +27,8 @@ jobs:
                 echo "step: $STEP_ENV"
                 echo "global: $GLOBAL_ENV"
                 echo "job: $JOB_ENV"
+
+            - name: print environment variable from repo
+              run: |
+                echo "api url: $API_URL"
+                echo "app mode: $APP_MODE"
