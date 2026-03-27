@@ -18,6 +18,20 @@ jobs:
                 echo "Runner OS: $RUNNER_OS"
                 echo "Runner Arch: $RUNNER_ARCH"
                 echo "Workspace: $GITHUB_WORKSPACE"
+                echo "Repository: $GITHUB_REPOSITORY"
+                echo "Event: $GITHUB_EVENT_NAME"
+                echo "SHA: $GITHUB_SHA"
+
+            - name: List Installed tools
+              run: |
+                echo "#######JAVA#####"
+                java -version 2>&1 || echo 'Not Installed'
+                echo "#######NODE#####"
+                node --version || echo 'Not Installed'
+                echo "#####PYTHON#####"
+                python3 --version || echo 'Not Installed'
+                echo "#####DOCKER#####"
+                docker --version || echo 'Not Installed'
 
 
 
