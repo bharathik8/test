@@ -9,7 +9,8 @@ jobs:
     variable-demo:
         runs-on: ubuntu-latest
 
-        JOB_ENV: "job-value"
+        env:
+            JOB_ENV: "job-value"
 
         steps:
             - name: print global and job level variable
