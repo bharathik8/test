@@ -29,6 +29,9 @@ jobs:
                 echo "job: $JOB_ENV"
 
             - name: print environment variable from repo
+              env:
+                API_URL: ${{vars.APP_URL}}
+                APP_MODE: ${{vars.APP_MODE}}
               run: |
                 echo "api url: $API_URL"
                 echo "app mode: $APP_MODE"
