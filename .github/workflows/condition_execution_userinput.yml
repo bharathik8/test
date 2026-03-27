@@ -1,0 +1,16 @@
+name: condition_execution_userinput
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        default: 'dev'
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.inputs.environment == 'prod' }}
+        steps:
+            - name: Check environment
+              run: echo "Deploying to production"
