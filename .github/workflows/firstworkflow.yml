@@ -33,6 +33,16 @@ jobs:
                 echo "#####DOCKER#####"
                 docker --version || echo 'Not Installed'
 
+    test:
+        name: Job 2
+        runs_on: ubuntu-latest
+        needs: build
+        steps:
+            - name: mock test
+              run: |
+                echo "Running Unit test"
+                echo "test"
+
 
 
 
