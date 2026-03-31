@@ -1,0 +1,14 @@
+name: Dynamic docker runner
+
+on: workflow_dispatch
+
+env:
+   APP_TYPE: java 
+
+jobs:
+    build:
+        runs-on: [self-hosted, linux, docker, dynamic]
+
+        steps:
+            - name: runner detail
+              run: echo "Running on $RUNNER_OS"
